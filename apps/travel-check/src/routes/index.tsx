@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "@travel-check-client/ui";
+import { StartButton } from "@travel-check-client/ui";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -7,9 +7,9 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div className=" bg-Surface">
-      Hello "/"!
-      <Button value="asd" />
+    <div>
+      <p className="font-dungGeunMo text-2xl">여행췍</p>
+      <StartButton onClick={() => alert("여행췍 시작")} />
     </div>
   );
 }

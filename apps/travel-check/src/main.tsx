@@ -7,7 +7,6 @@ import { routeTree } from "./routeTree.gen";
 
 //Import tailwind css
 import "./styles.css";
-
 // Create a new router instance
 const router = createRouter({ routeTree });
 
@@ -25,6 +24,6 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
-    </StrictMode>
+    </StrictMode>,
   );
 }

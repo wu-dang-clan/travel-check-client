@@ -4,15 +4,15 @@ import tseslint from "typescript-eslint";
 import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
-import pluginNext from "@next/eslint-plugin-next";
+import pluginJsxA11y from "eslint-plugin-jsx-a11y";
 import { config as baseConfig } from "./base.js";
 
 /**
- * A custom ESLint configuration for libraries that use Next.js.
+ * Vite + React 프로젝트를 위한 ESLint 설정
  *
  * @type {import("eslint").Linter.Config[]}
- * */
-export const nextJsConfig = [
+ */
+export const viteConfig = [
   ...baseConfig,
   js.configs.recommended,
   eslintConfigPrettier,
@@ -22,28 +22,30 @@ export const nextJsConfig = [
     languageOptions: {
       ...pluginReact.configs.flat.recommended.languageOptions,
       globals: {
-        ...globals.serviceworker,
+        ...globals.browser,
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
   },
   {
     plugins: {
-      "@next/next": pluginNext,
-    },
-    rules: {
-      ...pluginNext.configs.recommended.rules,
-      ...pluginNext.configs["core-web-vitals"].rules,
-    },
-  },
-  {
-    plugins: {
       "react-hooks": pluginReactHooks,
+      "jsx-a11y": pluginJsxA11y,
     },
-    settings: { react: { version: "detect" } },
+    settings: {
+      react: { version: "detect" },
+    },
     rules: {
       ...pluginReactHooks.configs.recommended.rules,
-      // React scope no longer necessary with new JSX transform.
+      ...pluginJsxA11y.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
+      // Vite 관련 추가 규칙
+      "import/no-absolute-path": "off",
+      "react/prop-types": "off", // TypeScript를 사용하므로 불필요
     },
   },
 ];

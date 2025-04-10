@@ -1,2 +1,4 @@
 import "./styles.css";
-export { default as Button } from "./buttons/button";
+import "./fonts/font.css";
+
+export { default as StartButton } from "./components/buttons/StartButton";
