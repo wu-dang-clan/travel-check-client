@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "travel-check-client",
   "private": true,
   "scripts": {
     "build": "turbo run build",
