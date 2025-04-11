@@ -12,7 +12,6 @@ export default function StartButton({ onClick }: StartButtonProps) {
   return (
     <div>
       <button
-        className="w-full"
         onMouseDown={() => setIsPressed(true)}
         onMouseUp={() => setIsPressed(false)}
         onMouseLeave={() => setIsPressed(false)}

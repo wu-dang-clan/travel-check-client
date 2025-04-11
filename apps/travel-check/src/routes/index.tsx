@@ -7,9 +7,11 @@ export const Route = createFileRoute("/")({
 
 function RouteComponent() {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <p className="font-dungGeunMo text-2xl">여행췍</p>
-      <StartButton onClick={() => alert("여행췍 시작")} />
+      <div className="bg-black">
+        <StartButton onClick={() => alert("여행췍 시작")} />
+      </div>
     </div>
   );
 }

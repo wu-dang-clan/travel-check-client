@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
+import Background from "../components/Background";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -8,8 +9,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <React.Fragment>
-      <div className="mx-auto w-lg min-w-sm">
-        <div className="h-screen snap-y snap-mandatory overflow-y-auto bg-linear-to-t from-[#00DAEB] to-[#004185]">
+      <div className="mx-auto h-screen">
+        <div className="absolute inset-0 z-0 mx-auto w-lg min-w-sm">
+          <Background />
+        </div>
+        <div className="absolute inset-0 z-10 mx-auto w-lg min-w-sm">
           <Outlet />
         </div>
       </div>
