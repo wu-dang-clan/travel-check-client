@@ -1,28 +1,25 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StartButton } from "@travel-check-client/ui";
+import { InputAddList } from "@travel-check-client/ui";
 
 const meta = {
-  title: "UI/Button/StartButton",
-  component: StartButton,
+  title: "UI/Input/InputAddList",
+  component: InputAddList,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {
-    onClick: { action: "clicked" },
-  },
-} satisfies Meta<typeof StartButton>;
+  argTypes: {},
+} satisfies Meta<typeof InputAddList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
-};
-
-export const WithClickHandler: Story = {
   args: {
-    onClick: () => alert("시작 버튼이 클릭되었습니다!"),
+    placeholder: "여행지",
+    onChange: (e) => {
+      console.log(e.target.value);
+    },
   },
 };
 

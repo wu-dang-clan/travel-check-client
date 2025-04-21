@@ -9,12 +9,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_ab4101825ff861b"
   },
   "dependencies": {
+    "@travel-check-client/ui": "workspace:*",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@travel-check-client/ui": "workspace:*"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3",
@@ -28,6 +29,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "chromatic": "^11.28.2",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",

@@ -1,0 +1,17 @@
+<svg width="68" height="44" viewBox="0 0 68 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="12" width="4" height="20" fill="#902F00"/>
+<rect x="4" y="8" width="4" height="4" fill="#902F00"/>
+<rect x="60" y="8" width="4" height="4" fill="#902F00"/>
+<rect x="60" y="32" width="4" height="4" fill="#902F00"/>
+<rect x="64" y="12" width="4" height="20" fill="#902F00"/>
+<rect x="56" y="36" width="4" height="4" fill="#902F00"/>
+<rect x="12" y="40" width="44" height="4" fill="#902F00"/>
+<rect x="8" y="4" width="4" height="4" fill="#902F00"/>
+<rect x="56" y="4" width="4" height="4" fill="#902F00"/>
+<rect x="12" width="44" height="4" fill="#902F00"/>
+<rect x="4" y="32" width="4" height="4" fill="#902F00"/>
+<rect x="8" y="36" width="4" height="4" fill="#902F00"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M56 4H12V8H8V12H4V32H8V36H60V32H64V12H60V8H56V4Z" fill="#F1A739"/>
+<rect x="12" y="36" width="44" height="4" fill="#E4531F"/>
+<path d="M29 21V22H32V23H28V22H27V21H25V22H24V23H20V22H23V21H24V20H25V18H20V17H25V16H27V17H32V18H27V20H28V21H29ZM33 24V25H27V29H25V25H19V24H33ZM47 16V22H50V23H47V29H45V16H47ZM38 27V26H39V18H35V17H41V26H40V27H39V28H36V27H38Z" fill="black"/>
+</svg>

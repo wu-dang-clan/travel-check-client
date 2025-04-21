@@ -1,0 +1,17 @@
+<svg width="332" height="44" viewBox="0 0 332 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="12" width="308" height="4" fill="black"/>
+<rect x="12" y="40" width="308" height="4" fill="black"/>
+<rect x="8" y="4" width="4" height="4" fill="black"/>
+<rect x="8" y="36" width="4" height="4" fill="black"/>
+<rect x="4" y="8" width="4" height="4" fill="black"/>
+<rect x="4" y="32" width="4" height="4" fill="black"/>
+<rect y="12" width="4" height="20" fill="black"/>
+<rect x="320" y="4" width="4" height="4" fill="black"/>
+<rect x="320" y="36" width="4" height="4" fill="black"/>
+<rect x="324" y="8" width="4" height="4" fill="black"/>
+<rect x="324" y="32" width="4" height="4" fill="black"/>
+<rect x="328" y="12" width="4" height="20" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 4H320V8H324V12H328V32H4V12H8V8H12V4Z" fill="#F2F2F2"/>
+<rect x="8" y="32" width="316" height="4" fill="#CCCCCC"/>
+<rect x="12" y="36" width="308" height="4" fill="#BBBBBB"/>
+</svg>
