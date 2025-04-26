@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@travel-check-client/ui": "workspace:*"
+    "@travel-check-client/ui": "workspace:*",
+    "@travel-check-client/ky": "workspace:*",
+    "@travel-check-client/react-query": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
