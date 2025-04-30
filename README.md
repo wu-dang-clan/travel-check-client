@@ -1,84 +1,87 @@
-# Turborepo starter
+# 여행췤
 
-This Turborepo starter is maintained by the Turborepo core team.
+여행용 체크리스트 공유
 
-## Using this example
+___
 
-Run the following command:
+## 서비스 이름 및 소개
+여행에 필요한 준비물들의 체크리스트를 친구들과 공유하고, 준비 상황을 공유하세요!</br>
+여권 챙겼니? 삼각대 챙겼니? 계속 물어보지 말고, 이제는 <b>여행췤</b> 하세요
 
-```sh
-npx create-turbo@latest
+___
+
+# 📦 프로젝트 구조 및 Turborepo 사용법
+
+이 프로젝트는 [Turborepo](https://turbo.build/)를 기반으로 구성된 모노레포입니다.  
+패키지 간 캐싱, 병렬 빌드, 의존성 추적 등을 효율적으로 관리할 수 있습니다.
+
+---
+
+## 파일구조
+```
+apps/
+  ├─ travel-check/        # 사용자-웹 앱 (VITE (react+ts))
+  └─ 
+
+packages/
+  ├─ eslint-config/       # 공통 ESLint 설정
+  ├─ ky/                  # ky 설정
+  ├─ react-query/         # react-query 설정
+  ├─ typescript-config/   # 공통 tsconfig
+  └─ ui/                  # 공통 UI 컴포넌트 라이브러리
 ```
 
-## What's inside?
+## 🚀 주요 명령어
 
-This Turborepo includes the following packages/apps:
+| 명령어 | 설명 |
+|--------|------|
+| `pnpm dev` | 모든 앱과 패키지를 watch 모드로 실행 |
+| `pnpm build` | 전체 빌드 수행 |
+| `npx turbo run build` | Turbo의 빌드 파이프라인을 직접 실행 |
+| `npx turbo run lint` | 전체 린트 실행 |
+| `npx turbo run dev --filter=web` | `web` 앱만 dev 실행 |
+| `npx turbo run build --filter=ui` | `ui` 패키지만 빌드 |
 
-### Apps and Packages
+---
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## 📄 Commit Message Convention
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### 1. 📌 커밋 메시지 규칙
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+커밋 메시지는 다음 구조를 따릅니다:
 
 ```
-cd my-turborepo
-pnpm build
+타입 [#이슈번호] 메시지
 ```
 
-### Develop
+- 타입은 대괄호 없이 맨 앞에 작성합니다.
+- [#이슈번호]는 대괄호로 감싸 작성합니다.
+- 메시지는 자연스럽고 명확하게 작성합니다.
 
-To develop all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
-pnpm dev
-```
+### 2. 📌 사용 가능한 타입(Type)
 
-### Remote Caching
+| 타입 | 설명 |
+|------|------|
+| Feat | 새로운 기능 추가 |
+| Fix | 버그 수정 |
+| HOTFIX | 긴급한 버그 수정 (배포 사고 등) |
+| QA | QA 테스트 중 발견된 수정사항 반영 |
+| Remove | 필요 없는 코드, 파일 제거 |
+| Update | 문서, 설정 파일 업데이트 |
+| Chore | 빌드 업무, 패키지 관리, 배포 관련 작업 등 사용자의 입장에서 직접적인 변화가 없는 작업|
+| Refactor | 코드 리팩토링 (동작 변화 없이 개선) |
+| Style | 코드 포맷팅, 세미콜론 누락, 시각적 스타일 변경(CSS) 등 기능 변경이 없는 UI 수정 |
+| Init | 프로젝트 초기 세팅 작업 |
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+---
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+### 3. 📌 커밋 작성 시 주의사항
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+- 한 번의 커밋은 하나의 목적만 담아야 합니다.
+- 짧고 명확하게, 수정한 이유를 드러낼 것
+- 영어/한글 혼용 가능하되, 한 프로젝트 내에서는 같은 수정일 경우 동일 단어 사용
 
-```
-cd my-turborepo
-npx turbo login
-```
+---
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/docs/reference/command-line-reference)
