@@ -1,0 +1,56 @@
+<svg width="380" height="168" viewBox="0 0 380 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="132" width="4" height="12" fill="#6E9029"/>
+<rect y="132" width="4" height="12" fill="#8FBB33"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4 144H0V168H4H8V144H4Z" fill="#836C44"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 144H8V168H12H16H20H24H28H32V164H28V160H24V156H20V152H16V148H12V144Z" fill="#59492E"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 132H8V136V140V144H12V148H16V152H20V156H24V160H28V164H32V168H36H40H44V164H40V160H36V156H32V152H28V148H24V144H20V140H16V136H12V132Z" fill="#4E661C"/>
+<rect x="24" y="72" width="4" height="12" fill="#C3D868"/>
+<rect x="28" y="68" width="4" height="4" fill="#C3D868"/>
+<rect x="12" y="80" width="12" height="4" fill="#C3D868"/>
+<rect x="8" y="84" width="4" height="4" fill="#C3D868"/>
+<rect x="4" y="88" width="4" height="4" fill="#C3D868"/>
+<rect y="92" width="4" height="40" fill="#C3D868"/>
+<rect x="32" y="64" width="4" height="4" fill="#C3D868"/>
+<rect x="36" y="60" width="4" height="4" fill="#C3D868"/>
+<rect x="40" y="56" width="4" height="4" fill="#C3D868"/>
+<rect x="44" y="52" width="4" height="4" fill="#C3D868"/>
+<rect x="48" y="48" width="4" height="4" fill="#C3D868"/>
+<rect x="52" y="44" width="4" height="4" fill="#C3D868"/>
+<rect x="56" y="40" width="4" height="4" fill="#C3D868"/>
+<rect x="60" y="36" width="4" height="4" fill="#C3D868"/>
+<rect x="64" y="32" width="4" height="4" fill="#C3D868"/>
+<rect x="68" y="28" width="4" height="4" fill="#C3D868"/>
+<rect x="72" y="24" width="4" height="4" fill="#C3D868"/>
+<rect x="76" y="20" width="4" height="4" fill="#C3D868"/>
+<rect x="80" y="16" width="4" height="4" fill="#C3D868"/>
+<rect x="84" y="12" width="4" height="4" fill="#C3D868"/>
+<rect x="88" y="8" width="4" height="4" fill="#C3D868"/>
+<rect x="92" y="4" width="4" height="4" fill="#C3D868"/>
+<rect x="264" y="4" width="8" height="4" fill="#C3D868"/>
+<rect x="272" y="8" width="4" height="4" fill="#C3D868"/>
+<rect x="100" width="164" height="4" fill="#C3D868"/>
+<rect x="276" y="12" width="4" height="4" fill="#C3D868"/>
+<rect x="280" y="16" width="4" height="4" fill="#C3D868"/>
+<rect x="284" y="20" width="4" height="4" fill="#C3D868"/>
+<rect x="288" y="24" width="4" height="4" fill="#C3D868"/>
+<rect x="292" y="28" width="4" height="4" fill="#C3D868"/>
+<rect x="296" y="32" width="4" height="4" fill="#C3D868"/>
+<rect x="300" y="36" width="4" height="4" fill="#C3D868"/>
+<rect x="304" y="40" width="4" height="4" fill="#C3D868"/>
+<rect x="308" y="44" width="4" height="4" fill="#C3D868"/>
+<rect x="312" y="48" width="4" height="4" fill="#C3D868"/>
+<rect x="316" y="52" width="4" height="4" fill="#C3D868"/>
+<rect x="320" y="56" width="20" height="4" fill="#C3D868"/>
+<rect x="340" y="60" width="4" height="4" fill="#C3D868"/>
+<rect x="344" y="64" width="4" height="4" fill="#C3D868"/>
+<rect x="348" y="68" width="4" height="40" fill="#C3D868"/>
+<rect x="352" y="108" width="4" height="4" fill="#C3D868"/>
+<rect x="356" y="112" width="4" height="4" fill="#C3D868"/>
+<rect x="360" y="116" width="4" height="4" fill="#C3D868"/>
+<rect x="364" y="120" width="4" height="4" fill="#C3D868"/>
+<rect x="368" y="124" width="4" height="4" fill="#C3D868"/>
+<rect x="372" y="128" width="4" height="4" fill="#C3D868"/>
+<rect x="376" y="132" width="4" height="4" fill="#C3D868"/>
+<rect x="96" width="4" height="4" fill="#C3D868"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96 4H264V8H272V12H276V16H280V20H284V24H288V28H292V32H296V36H300V40H304V44H308V48H312V52H316V56H320V60H340V64H344V68H348V104V108H352V112H356V116H360V120H364V124H368V128H372V132H376V136H380V168H376H372H368H364H360H356H352H348H288H284H280H276H272H264H92H44V164H40V160H36V156H32V152H28V148H24V144H20V140H16V136H12V132H4V92H8V88H12V84H28V76V72H32V68H36V64H40V60H44V56H48V52H52V48H56V44H60V40H64V36H68V32H72V28H76V24H80V20H84V16H88V12H92V8H96V4Z" fill="#A3CB43"/>
+</svg>
