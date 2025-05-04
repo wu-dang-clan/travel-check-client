@@ -13,7 +13,7 @@ export default function PixelBox({ children }: PixelBoxProps) {
       <div className="w-full border-x-4 border-x-[#902F00]">
         <div className="w-full border-x-8 border-x-[#FF8C00]">
           <div className="w-full border-x-4 border-x-[#BF4600] bg-[#FFBA7C]">
-            <div className="flex flex-col items-center gap-8 px-4 pt-4 pb-8">{children}</div>
+            <div className="flex flex-col items-center p-4">{children}</div>
           </div>
         </div>
       </div>
