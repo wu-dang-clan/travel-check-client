@@ -11,12 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as LinkImport } from './routes/link'
 import { Route as JoinImport } from './routes/join'
 import { Route as CreateImport } from './routes/create'
 import { Route as IndexImport } from './routes/index'
 import { Route as TestTestapiImport } from './routes/test/testapi'
 
 // Create/Update Routes
+
+const LinkRoute = LinkImport.update({
+  id: '/link',
+  path: '/link',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const JoinRoute = JoinImport.update({
   id: '/join',
@@ -67,6 +74,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JoinImport
       parentRoute: typeof rootRoute
     }
+    '/link': {
+      id: '/link'
+      path: '/link'
+      fullPath: '/link'
+      preLoaderRoute: typeof LinkImport
+      parentRoute: typeof rootRoute
+    }
     '/test/testapi': {
       id: '/test/testapi'
       path: '/test/testapi'
@@ -83,6 +97,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/join': typeof JoinRoute
+  '/link': typeof LinkRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
@@ -90,6 +105,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/join': typeof JoinRoute
+  '/link': typeof LinkRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
@@ -98,15 +114,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/join': typeof JoinRoute
+  '/link': typeof LinkRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/create' | '/join' | '/test/testapi'
+  fullPaths: '/' | '/create' | '/join' | '/link' | '/test/testapi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/create' | '/join' | '/test/testapi'
-  id: '__root__' | '/' | '/create' | '/join' | '/test/testapi'
+  to: '/' | '/create' | '/join' | '/link' | '/test/testapi'
+  id: '__root__' | '/' | '/create' | '/join' | '/link' | '/test/testapi'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,6 +131,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreateRoute: typeof CreateRoute
   JoinRoute: typeof JoinRoute
+  LinkRoute: typeof LinkRoute
   TestTestapiRoute: typeof TestTestapiRoute
 }
 
@@ -121,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreateRoute: CreateRoute,
   JoinRoute: JoinRoute,
+  LinkRoute: LinkRoute,
   TestTestapiRoute: TestTestapiRoute,
 }
 
@@ -137,6 +156,7 @@ export const routeTree = rootRoute
         "/",
         "/create",
         "/join",
+        "/link",
         "/test/testapi"
       ]
     },
@@ -148,6 +168,9 @@ export const routeTree = rootRoute
     },
     "/join": {
       "filePath": "join.tsx"
+    },
+    "/link": {
+      "filePath": "link.tsx"
     },
     "/test/testapi": {
       "filePath": "test/testapi.tsx"
