@@ -13,10 +13,10 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as LoadingImport } from './routes/loading'
 import { Route as LinkImport } from './routes/link'
-import { Route as JoinImport } from './routes/join'
 import { Route as CreateImport } from './routes/create'
 import { Route as IndexImport } from './routes/index'
 import { Route as TestTestapiImport } from './routes/test/testapi'
+import { Route as EpicIdJoinImport } from './routes/$epicId/join'
 
 // Create/Update Routes
 
@@ -29,12 +29,6 @@ const LoadingRoute = LoadingImport.update({
 const LinkRoute = LinkImport.update({
   id: '/link',
   path: '/link',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const JoinRoute = JoinImport.update({
-  id: '/join',
-  path: '/join',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -56,6 +50,12 @@ const TestTestapiRoute = TestTestapiImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const EpicIdJoinRoute = EpicIdJoinImport.update({
+  id: '/$epicId/join',
+  path: '/$epicId/join',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -74,13 +74,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreateImport
       parentRoute: typeof rootRoute
     }
-    '/join': {
-      id: '/join'
-      path: '/join'
-      fullPath: '/join'
-      preLoaderRoute: typeof JoinImport
-      parentRoute: typeof rootRoute
-    }
     '/link': {
       id: '/link'
       path: '/link'
@@ -93,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/loading'
       fullPath: '/loading'
       preLoaderRoute: typeof LoadingImport
+      parentRoute: typeof rootRoute
+    }
+    '/$epicId/join': {
+      id: '/$epicId/join'
+      path: '/$epicId/join'
+      fullPath: '/$epicId/join'
+      preLoaderRoute: typeof EpicIdJoinImport
       parentRoute: typeof rootRoute
     }
     '/test/testapi': {
@@ -110,18 +110,18 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
-  '/join': typeof JoinRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/join': typeof EpicIdJoinRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
-  '/join': typeof JoinRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/join': typeof EpicIdJoinRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
@@ -129,24 +129,30 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
-  '/join': typeof JoinRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/join': typeof EpicIdJoinRoute
   '/test/testapi': typeof TestTestapiRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/create' | '/join' | '/link' | '/loading' | '/test/testapi'
+  fullPaths:
+    | '/'
+    | '/create'
+    | '/link'
+    | '/loading'
+    | '/$epicId/join'
+    | '/test/testapi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/create' | '/join' | '/link' | '/loading' | '/test/testapi'
+  to: '/' | '/create' | '/link' | '/loading' | '/$epicId/join' | '/test/testapi'
   id:
     | '__root__'
     | '/'
     | '/create'
-    | '/join'
     | '/link'
     | '/loading'
+    | '/$epicId/join'
     | '/test/testapi'
   fileRoutesById: FileRoutesById
 }
@@ -154,18 +160,18 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreateRoute: typeof CreateRoute
-  JoinRoute: typeof JoinRoute
   LinkRoute: typeof LinkRoute
   LoadingRoute: typeof LoadingRoute
+  EpicIdJoinRoute: typeof EpicIdJoinRoute
   TestTestapiRoute: typeof TestTestapiRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreateRoute: CreateRoute,
-  JoinRoute: JoinRoute,
   LinkRoute: LinkRoute,
   LoadingRoute: LoadingRoute,
+  EpicIdJoinRoute: EpicIdJoinRoute,
   TestTestapiRoute: TestTestapiRoute,
 }
 
@@ -181,9 +187,9 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/create",
-        "/join",
         "/link",
         "/loading",
+        "/$epicId/join",
         "/test/testapi"
       ]
     },
@@ -193,14 +199,14 @@ export const routeTree = rootRoute
     "/create": {
       "filePath": "create.tsx"
     },
-    "/join": {
-      "filePath": "join.tsx"
-    },
     "/link": {
       "filePath": "link.tsx"
     },
     "/loading": {
       "filePath": "loading.tsx"
+    },
+    "/$epicId/join": {
+      "filePath": "$epicId/join.tsx"
     },
     "/test/testapi": {
       "filePath": "test/testapi.tsx"
