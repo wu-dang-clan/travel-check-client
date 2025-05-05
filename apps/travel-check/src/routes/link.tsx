@@ -10,7 +10,10 @@ function RouteComponent() {
     <div className="flex h-full max-h-[48rem] flex-col items-center justify-between pt-4 pb-4">
       <TitleBox title="여행 링크 복사" />
       <PixelBox>
-        <p> 여행 입장 링크</p>
+        <div className="flex w-full flex-row">
+          <p> 여행 입장 링크</p>
+        </div>
+
         <InputText />
         <ButtonLg color="red" onClick={() => {}}>
           링크 복사하기
