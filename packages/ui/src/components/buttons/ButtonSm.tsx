@@ -34,7 +34,7 @@ const buttonImages = {
   },
 };
 
-export default function ButtonMed({ item, onClick }: ButtonMedProps) {
+export default function ButtonSm({ item, onClick }: ButtonMedProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
