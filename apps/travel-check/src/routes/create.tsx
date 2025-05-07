@@ -6,6 +6,7 @@ import {
   InputPin,
   NumButton,
   PixelBox,
+  ButtonLg,
 } from "@travel-check-client/ui";
 import { useState, useRef } from "react";
 
@@ -45,7 +46,7 @@ function RouteComponent() {
 
   return (
     <div className="flex flex-col items-center justify-center gap-4 pt-4">
-      <TitleBox title="타이틀 " />
+      <TitleBox title="여행 생성" />
       <PixelBox>
         <InputText onChange={() => {}} placeholder="입력하세요" />
         <div className="flex w-full flex-row justify-between">
@@ -108,6 +109,9 @@ function RouteComponent() {
           </div>
         </div>
       </PixelBox>
+      <ButtonLg color="green" onClick={() => console.log("여행 생성")}>
+        리스트 생성
+      </ButtonLg>
     </div>
   );
 }
