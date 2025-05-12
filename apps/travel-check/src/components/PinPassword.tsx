@@ -13,9 +13,9 @@ export default function PinPassword({ value, onChange }: PinPasswordProps) {
 
   return (
     <PixelBox>
-      <p className="text-xl">pin 번호 입력</p>
+      <p className="mb-8 text-xl">pin 번호 입력</p>
       <InputPin value={value} onChange={onChange} />
-      <div className="flex flex-col gap-6">
+      <div className="mt-8 flex flex-col gap-6">
         <div className="flex w-[20.75rem] flex-row justify-between gap-6">
           <NumButton number="1" onClick={() => handleNumClick("1")} />
           <NumButton number="2" onClick={() => handleNumClick("2")} />
