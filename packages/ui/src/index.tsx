@@ -17,3 +17,5 @@ export { default as ImageTypoLogo } from "./components/images/ImageTypoLogo";
 
 export { default as TitleBox } from "./components/boxs/TitleBox";
 export { default as PixelBox } from "./components/boxs/PixelBox";
+
+export { default as LoadingBar } from "./components/loadings/LoadingBar";
