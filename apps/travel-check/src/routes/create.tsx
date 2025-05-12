@@ -1,14 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  InputText,
-  TitleBox,
-  ButtonMed,
-  InputPin,
-  NumButton,
-  PixelBox,
-  ButtonLg,
-} from "@travel-check-client/ui";
+import { InputText, TitleBox, ButtonMed, PixelBox, ButtonLg } from "@travel-check-client/ui";
 import { useState, useRef } from "react";
+import PinPassword from "../components/PinPassword";
 
 type TravelType = "domestic" | "overseas" | null;
 
@@ -45,70 +38,55 @@ function RouteComponent() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 pt-4">
+    <div className="flex h-full flex-col items-center justify-center gap-4 py-4">
       <TitleBox title="여행 생성" />
       <PixelBox>
-        <InputText onChange={() => {}} placeholder="입력하세요" />
-        <div className="flex w-full flex-row justify-between">
-          <ButtonMed
-            color="yellow"
-            isPressing={selectedType === "domestic" ? true : false}
-            onClick={() => setSelectedType("domestic")}
-          >
-            국내 여행
-          </ButtonMed>
-          <ButtonMed
-            color="yellow"
-            isPressing={selectedType === "overseas" ? true : false}
-            onClick={() => setSelectedType("overseas")}
-          >
-            해외 여행
-          </ButtonMed>
-        </div>
-        <div className="flex w-full flex-row justify-between">
-          <div>
-            <ButtonMed color="blue" onClick={handleStartDateClick}>
-              <input
-                ref={startDateRef}
-                type="date"
-                className=""
-                onChange={(e) => setStartDate(e.target.value)}
-              />
+        <div className="flex flex-col items-center justify-center">
+          <p className="mb-2 w-full justify-start text-base">여행 이름 입력</p>
+          <InputText onChange={() => {}} placeholder="입력하세요" />
+          <p className="mt-6 mb-2 w-full justify-start text-base">여행 종류</p>
+          <div className="flex w-full flex-row justify-between">
+            <ButtonMed
+              color="yellow"
+              isPressing={selectedType === "domestic" ? true : false}
+              onClick={() => setSelectedType("domestic")}
+            >
+              국내 여행
+            </ButtonMed>
+            <ButtonMed
+              color="yellow"
+              isPressing={selectedType === "overseas" ? true : false}
+              onClick={() => setSelectedType("overseas")}
+            >
+              해외 여행
             </ButtonMed>
           </div>
-          <div>
-            <ButtonMed color="blue" onClick={handleEndDateClick}>
-              <input
-                ref={endDateRef}
-                type="date"
-                className=""
-                onChange={(e) => setEndDate(e.target.value)}
-              />
-            </ButtonMed>
+          <p className="mt-6 mb-2 w-full justify-start text-base">여행 일정</p>
+          <div className="flex w-full flex-row justify-between">
+            <div>
+              <ButtonMed color="blue" onClick={handleStartDateClick}>
+                <input
+                  ref={startDateRef}
+                  type="date"
+                  className=""
+                  onChange={(e) => setStartDate(e.target.value)}
+                />
+              </ButtonMed>
+            </div>
+            <div>
+              <ButtonMed color="blue" onClick={handleEndDateClick}>
+                <input
+                  ref={endDateRef}
+                  type="date"
+                  className=""
+                  onChange={(e) => setEndDate(e.target.value)}
+                />
+              </ButtonMed>
+            </div>
           </div>
         </div>
       </PixelBox>
-
-      <PixelBox>
-        <p className="text-xl">pin 번호 입력</p>
-        <InputPin value={pinValue} onChange={setPinValue} />
-        <div className="flex flex-col gap-6">
-          <div className="flex w-[20.75rem] flex-row justify-between gap-6">
-            <NumButton number="1" onClick={() => handleNumClick("1")} />
-            <NumButton number="2" onClick={() => handleNumClick("2")} />
-            <NumButton number="3" onClick={() => handleNumClick("3")} />
-            <NumButton number="4" onClick={() => handleNumClick("4")} />
-            <NumButton number="5" onClick={() => handleNumClick("5")} />
-          </div>
-          <div className="flex w-[20.75rem] flex-row justify-between gap-6">
-            <NumButton number="6" onClick={() => handleNumClick("6")} />
-            <NumButton number="7" onClick={() => handleNumClick("7")} />
-            <NumButton number="8" onClick={() => handleNumClick("8")} />
-            <NumButton number="9" onClick={() => handleNumClick("9")} />
-            <NumButton number="0" onClick={() => handleNumClick("0")} />
-          </div>
-        </div>
-      </PixelBox>
+      <PinPassword value={pinValue} onChange={setPinValue} />
       <ButtonLg color="green" onClick={() => console.log("여행 생성")}>
         리스트 생성
       </ButtonLg>
