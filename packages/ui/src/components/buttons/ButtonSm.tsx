@@ -7,8 +7,10 @@ import ButtonCancel from "../../assets/buttons/ButtonCancel.svg";
 import ButtonCancelPress from "../../assets/buttons/ButtonCancelPress.svg";
 import ButtonDone from "../../assets/buttons/ButtonDone.svg";
 import ButtonDonePress from "../../assets/buttons/ButtonDonePress.svg";
+import ButtonDelete from "../../assets/buttons/ButtonDelete.svg";
+import ButtonDeletePress from "../../assets/buttons/ButtonDeletePress.svg";
 
-type ButtonCategory = "edit" | "select" | "cancel" | "done";
+type ButtonCategory = "edit" | "select" | "cancel" | "done" | "delete";
 
 interface ButtonMedProps {
   item: ButtonCategory;
@@ -32,9 +34,13 @@ const buttonImages = {
     default: ButtonDone,
     pressed: ButtonDonePress,
   },
+  delete: {
+    default: ButtonDelete,
+    pressed: ButtonDeletePress,
+  },
 };
 
-export default function ButtonMed({ item, onClick }: ButtonMedProps) {
+export default function ButtonSm({ item, onClick }: ButtonMedProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (

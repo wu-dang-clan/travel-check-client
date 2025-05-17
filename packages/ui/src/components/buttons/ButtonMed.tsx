@@ -16,6 +16,7 @@ interface ButtonMedProps {
   color: ButtonColor;
   children: React.ReactNode;
   onClick?: () => void;
+  isPressing?: boolean; // 추가된 prop
 }
 
 const buttonImages = {
@@ -41,7 +42,12 @@ const buttonImages = {
   },
 };
 
-export default function ButtonMed({ color, children, onClick }: ButtonMedProps) {
+export default function ButtonMed({
+  color,
+  children,
+  onClick,
+  isPressing = false,
+}: ButtonMedProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
@@ -54,11 +60,13 @@ export default function ButtonMed({ color, children, onClick }: ButtonMedProps) 
         onClick={onClick}
       >
         <img
-          src={isPressed ? buttonImages[color].pressed : buttonImages[color].default}
+          src={isPressed || isPressing ? buttonImages[color].pressed : buttonImages[color].default}
           alt={`${color} button`}
         />
         <p
-          className={`font-dungGeunMo absolute top-1/2 left-1/2 -translate-x-1/2 ${isPressed ? "translate-y-[-45%]" : "translate-y-[-60%]"} `}
+          className={`font-dungGeunMo absolute top-1/2 left-1/2 -translate-x-1/2 ${
+            isPressed || isPressing ? "translate-y-[-45%]" : "translate-y-[-60%]"
+          }`}
         >
           {children}
         </p>

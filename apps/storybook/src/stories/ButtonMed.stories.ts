@@ -12,69 +12,53 @@ const meta = {
     color: {
       control: "select",
       options: ["green", "red", "yellow", "blue", "white"],
+      description: "버튼의 색상",
     },
     children: {
       control: "text",
+      description: "버튼의 텍스트",
     },
-    onClick: { action: "clicked" },
+    onClick: {
+      action: "clicked",
+      description: "클릭 이벤트 핸들러",
+    },
+    isPressing: {
+      control: "boolean",
+      description: "버튼의 누름 상태",
+    },
   },
 } satisfies Meta<typeof ButtonMed>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Green: Story = {
-  args: {
-    color: "green",
-    children: "버튼",
-  },
-};
-
-export const Red: Story = {
-  args: {
-    color: "red",
-    children: "버튼",
-  },
-};
-
-export const Yellow: Story = {
+export const Default: Story = {
   args: {
     color: "yellow",
     children: "버튼",
+    isPressing: false,
   },
 };
 
-export const Blue: Story = {
+export const Pressed: Story = {
   args: {
-    color: "blue",
+    color: "yellow",
     children: "버튼",
-  },
-};
-
-export const White: Story = {
-  args: {
-    color: "white",
-    children: "버튼",
-  },
-};
-
-export const WithClickHandler: Story = {
-  args: {
-    color: "green",
-    children: "버튼",
-    onClick: () => alert("버튼이 클릭되었습니다!"),
+    isPressing: true,
   },
 };
 
 export const InteractiveDemo: Story = {
   args: {
-    color: "green",
-    children: "버튼",
+    color: "yellow",
+    children: "여행 선택",
+    isPressing: false,
   },
   parameters: {
     docs: {
       description: {
-        story: "마우스를 눌렀다 떼면 버튼 이미지가 변경됩니다.",
+        story:
+          "isPressing이 true일 때는 계속 눌린 상태로 유지됩니다. 일시적인 누름 효과는 마우스 이벤트로 처리됩니다.",
       },
     },
   },

@@ -1,16 +1,26 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { StartButton } from "@travel-check-client/ui";
+// 시작화면
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { StartButton, ImageTypoLogo, ImageCharacter } from "@travel-check-client/ui";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col items-center justify-center">
-      <p className="font-dungGeunMo text-2xl">여행췍</p>
+    <div className="flex flex-col items-center justify-center pt-20">
+      <p className="mb-4 text-xs text-white"> 쉽고 빠른 여행 체크리스트 공유</p>
+      <div className="mb-8">
+        <ImageTypoLogo />
+      </div>
+      <div className="mb-36">
+        <ImageCharacter />
+      </div>
+
       <div className="">
-        <StartButton onClick={() => alert("여행췍 시작")} />
+        <StartButton onClick={() => navigate({ to: "/create" })} />
       </div>
     </div>
   );

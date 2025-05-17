@@ -14,3 +14,8 @@ export { default as InputPin } from "./components/inputs/InputPin";
 
 export { default as ImageCharacter } from "./components/images/ImageCharacter";
 export { default as ImageTypoLogo } from "./components/images/ImageTypoLogo";
+
+export { default as TitleBox } from "./components/boxs/TitleBox";
+export { default as PixelBox } from "./components/boxs/PixelBox";
+
+export { default as LoadingBar } from "./components/loadings/LoadingBar";

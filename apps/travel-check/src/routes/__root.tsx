@@ -9,7 +9,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <React.Fragment>
-      <div className="mx-auto h-screen">
+      <div className="font-dungGeunMo mx-auto h-screen">
         <div className="absolute inset-0 z-0 mx-auto w-lg min-w-sm">
           <Background />
         </div>

@@ -71,7 +71,7 @@ const buttonImages = {
   },
 };
 
-export default function ButtonMed({ number, onClick }: NumButtonProps) {
+export default function NumButton({ number, onClick }: NumButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
