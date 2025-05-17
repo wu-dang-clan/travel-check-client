@@ -7,21 +7,24 @@ export const Route = createFileRoute("/link")({
 
 function RouteComponent() {
   return (
-    <div className="flex h-full max-h-[48rem] flex-col items-center justify-between pt-4 pb-4">
+    <div className="flex h-full flex-col items-center justify-between py-4">
       <TitleBox title="여행 링크 복사" />
-      <PixelBox>
-        <div className="flex w-full flex-row">
-          <p> 여행 입장 링크</p>
-        </div>
-
-        <InputText />
-        <ButtonLg color="red" onClick={() => {}}>
-          링크 복사하기
-        </ButtonLg>
-        <ButtonLg color="green" onClick={() => {}}>
-          여행 체크리스트 접속
-        </ButtonLg>
-      </PixelBox>
+      <div>
+        <PixelBox>
+          <div className="mb-2 flex w-full flex-col gap-2">
+            <div className="mb-2">
+              <p className="mb-1"> 여행 입장 링크</p>
+              <InputText />
+            </div>
+            <ButtonLg color="red" onClick={() => {}}>
+              링크 복사하기
+            </ButtonLg>
+            <ButtonLg color="green" onClick={() => {}}>
+              여행 체크리스트 접속
+            </ButtonLg>
+          </div>
+        </PixelBox>
+      </div>
     </div>
   );
 }
