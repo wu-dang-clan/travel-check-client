@@ -4,9 +4,10 @@ interface PersonalListProps {
   item: string;
   maxCount: number;
   currentCount: number;
+  onEdit?: () => void; // 수정 버튼 클릭 핸들러 추가
 }
 
-export default function PersonalList({ item, maxCount, currentCount }: PersonalListProps) {
+export default function PersonalList({ item, maxCount, currentCount, onEdit }: PersonalListProps) {
   return (
     <div className="w-full border border-[#3F0001]">
       <div className="w-full border-2 border-[#FEFFD9]">
@@ -18,7 +19,7 @@ export default function PersonalList({ item, maxCount, currentCount }: PersonalL
             </p>
           </div>
           <div className="flex flex-row gap-2">
-            <ButtonSm item="edit" onClick={() => {}} />
+            <ButtonSm item="edit" onClick={onEdit} />
             <ButtonSm item="done" onClick={() => {}} />
           </div>
         </div>
