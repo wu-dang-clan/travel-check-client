@@ -1,16 +1,32 @@
-import { PixelBox, ButtonLg, InputText, ButtonMed } from "@travel-check-client/ui";
+import { PixelBox, InputText, ButtonMed } from "@travel-check-client/ui";
 import { useState } from "react";
+
+type TravelType = "personal" | "member" | null;
+type User = {
+  id: string;
+  name: string;
+};
+type ManagerType = User | null;
 
 interface ModalEditProps {
   isOpen: boolean;
   onClose: () => void;
+  // 나중에 추가될 props
+  // users?: User[];
 }
 
 export default function ModalEdit({ isOpen, onClose }: ModalEditProps) {
   if (!isOpen) return null;
 
   const [selectedType, setSelectedType] = useState<TravelType>(null);
-  const [selectedManager, setSelectedManager] = useState<TravelType>(null);
+  const [selectedManager, setSelectedManager] = useState<ManagerType>(null);
+
+  // 임시 데이터 (나중에 props로 받아올 예정)
+  const mockUsers: User[] = [
+    { id: "user1", name: "유저1" },
+    { id: "user2", name: "유저2" },
+  ];
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div>
@@ -40,20 +56,16 @@ export default function ModalEdit({ isOpen, onClose }: ModalEditProps) {
               <>
                 <p className="text-base">담당자</p>
                 <div className="flex w-full flex-row justify-between">
-                  <ButtonMed
-                    color="white"
-                    isPressing={selectedManager === "user1" ? true : false}
-                    onClick={() => setSelectedManager("user1")}
-                  >
-                    유저1
-                  </ButtonMed>
-                  <ButtonMed
-                    color="white"
-                    isPressing={selectedManager === "user2" ? true : false}
-                    onClick={() => setSelectedManager("user2")}
-                  >
-                    유저2
-                  </ButtonMed>
+                  {mockUsers.map((user) => (
+                    <ButtonMed
+                      key={user.id}
+                      color="white"
+                      isPressing={selectedManager?.id === user.id}
+                      onClick={() => setSelectedManager(user)}
+                    >
+                      {user.name}
+                    </ButtonMed>
+                  ))}
                 </div>
               </>
             )}
