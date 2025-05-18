@@ -19,6 +19,7 @@ import { Route as TestTestapiImport } from './routes/test/testapi'
 import { Route as EpicIdMemberImport } from './routes/$epicId/member'
 import { Route as EpicIdMainImport } from './routes/$epicId/main'
 import { Route as EpicIdJoinImport } from './routes/$epicId/join'
+import { Route as EpicIdDeleteImport } from './routes/$epicId/delete'
 
 // Create/Update Routes
 
@@ -70,6 +71,12 @@ const EpicIdJoinRoute = EpicIdJoinImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const EpicIdDeleteRoute = EpicIdDeleteImport.update({
+  id: '/$epicId/delete',
+  path: '/$epicId/delete',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -100,6 +107,13 @@ declare module '@tanstack/react-router' {
       path: '/loading'
       fullPath: '/loading'
       preLoaderRoute: typeof LoadingImport
+      parentRoute: typeof rootRoute
+    }
+    '/$epicId/delete': {
+      id: '/$epicId/delete'
+      path: '/$epicId/delete'
+      fullPath: '/$epicId/delete'
+      preLoaderRoute: typeof EpicIdDeleteImport
       parentRoute: typeof rootRoute
     }
     '/$epicId/join': {
@@ -140,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/create': typeof CreateRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/delete': typeof EpicIdDeleteRoute
   '/$epicId/join': typeof EpicIdJoinRoute
   '/$epicId/main': typeof EpicIdMainRoute
   '/$epicId/member': typeof EpicIdMemberRoute
@@ -151,6 +166,7 @@ export interface FileRoutesByTo {
   '/create': typeof CreateRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/delete': typeof EpicIdDeleteRoute
   '/$epicId/join': typeof EpicIdJoinRoute
   '/$epicId/main': typeof EpicIdMainRoute
   '/$epicId/member': typeof EpicIdMemberRoute
@@ -163,6 +179,7 @@ export interface FileRoutesById {
   '/create': typeof CreateRoute
   '/link': typeof LinkRoute
   '/loading': typeof LoadingRoute
+  '/$epicId/delete': typeof EpicIdDeleteRoute
   '/$epicId/join': typeof EpicIdJoinRoute
   '/$epicId/main': typeof EpicIdMainRoute
   '/$epicId/member': typeof EpicIdMemberRoute
@@ -176,6 +193,7 @@ export interface FileRouteTypes {
     | '/create'
     | '/link'
     | '/loading'
+    | '/$epicId/delete'
     | '/$epicId/join'
     | '/$epicId/main'
     | '/$epicId/member'
@@ -186,6 +204,7 @@ export interface FileRouteTypes {
     | '/create'
     | '/link'
     | '/loading'
+    | '/$epicId/delete'
     | '/$epicId/join'
     | '/$epicId/main'
     | '/$epicId/member'
@@ -196,6 +215,7 @@ export interface FileRouteTypes {
     | '/create'
     | '/link'
     | '/loading'
+    | '/$epicId/delete'
     | '/$epicId/join'
     | '/$epicId/main'
     | '/$epicId/member'
@@ -208,6 +228,7 @@ export interface RootRouteChildren {
   CreateRoute: typeof CreateRoute
   LinkRoute: typeof LinkRoute
   LoadingRoute: typeof LoadingRoute
+  EpicIdDeleteRoute: typeof EpicIdDeleteRoute
   EpicIdJoinRoute: typeof EpicIdJoinRoute
   EpicIdMainRoute: typeof EpicIdMainRoute
   EpicIdMemberRoute: typeof EpicIdMemberRoute
@@ -219,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   CreateRoute: CreateRoute,
   LinkRoute: LinkRoute,
   LoadingRoute: LoadingRoute,
+  EpicIdDeleteRoute: EpicIdDeleteRoute,
   EpicIdJoinRoute: EpicIdJoinRoute,
   EpicIdMainRoute: EpicIdMainRoute,
   EpicIdMemberRoute: EpicIdMemberRoute,
@@ -239,6 +261,7 @@ export const routeTree = rootRoute
         "/create",
         "/link",
         "/loading",
+        "/$epicId/delete",
         "/$epicId/join",
         "/$epicId/main",
         "/$epicId/member",
@@ -256,6 +279,9 @@ export const routeTree = rootRoute
     },
     "/loading": {
       "filePath": "loading.tsx"
+    },
+    "/$epicId/delete": {
+      "filePath": "$epicId/delete.tsx"
     },
     "/$epicId/join": {
       "filePath": "$epicId/join.tsx"
