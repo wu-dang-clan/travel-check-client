@@ -1,6 +1,5 @@
 {
   "name": "storybook",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,7 +8,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_ab4101825ff861b"
   },
   "dependencies": {
