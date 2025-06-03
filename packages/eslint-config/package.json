@@ -1,12 +1,8 @@
 {
   "name": "@travel-check-client/eslint-config",
-  "version": "0.0.0",
   "type": "module",
-  "private": true,
   "exports": {
-    "./base": "./base.js",
-    "./vite": "./vite.js",
-    "./react-internal": "./react-internal.js"
+    "./react-config": "./react-config.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.24.0",
