@@ -1,4 +1,18 @@
 {
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "extends": "@travel-check-client/typescript-config/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/shared/components/*"],
+      "@CreatePage/*": ["src/components/CreatePage/*"],
+      "@LinkPage/*": ["src/components/LinkPage/*"],
+      "@JoinPage/*": ["src/components/JoinPage/*"],
+      "@MainPage/*": ["src/components/MainPage/*"],
+      "@MemberPage/*": ["src/components/MemberPage/*"],
+      "@Modals/*": ["src/components/Modals/*"],
+      "@assets/*": ["src/shared/assets/*"]
+    }
+  },
+  "include": ["src/**/*", "custom.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

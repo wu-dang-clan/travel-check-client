@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import Background from "../components/Background";
+import Background from "@components/Background";
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -14,7 +14,9 @@ function RootComponent() {
           <Background />
         </div>
         <div className="absolute inset-0 z-10 mx-auto w-lg min-w-sm">
-          <Outlet />
+          <div className="flex h-full flex-col items-center gap-4 py-4">
+            <Outlet />
+          </div>
         </div>
       </div>
     </React.Fragment>

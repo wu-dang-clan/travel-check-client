@@ -1,7 +1,6 @@
 {
   "name": "travel-check",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Travel Check Web Application",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,8 +12,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "@travel-check-client/ui": "workspace:*",
-    "@travel-check-client/ky": "workspace:*",
-    "@travel-check-client/react-query": "workspace:*"
+    "@travel-check-client/travel-api": "workspace:*",
+    "@travel-check-client/typescript-config": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
