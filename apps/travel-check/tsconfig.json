@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/shared/components/*"],
-      "@CreatePage/*": ["src/components/CreatePage/*"]
+      "@CreatePage/*": ["src/components/CreatePage/*"],
+      "@LinkPage/*": ["src/components/LinkPage/*"]
     }
   },
   "include": ["src/**/*", "custom.d.ts"],
