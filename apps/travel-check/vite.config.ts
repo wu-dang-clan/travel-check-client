@@ -18,6 +18,7 @@ export default defineConfig({
       "@LoadingPage": path.resolve(__dirname, "./src/components/LoadingPage"),
       "@MainPage": path.resolve(__dirname, "./src/components/MainPage"),
       "@MemberPage": path.resolve(__dirname, "./src/components/MemberPage"),
+      "@Modals": path.resolve(__dirname, "./src/components/Modals"),
     },
   },
   server: {

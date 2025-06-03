@@ -8,7 +8,8 @@
       "@LinkPage/*": ["src/components/LinkPage/*"],
       "@JoinPage/*": ["src/components/JoinPage/*"],
       "@MainPage/*": ["src/components/MainPage/*"],
-      "@MemberPage/*": ["src/components/MemberPage/*"]
+      "@MemberPage/*": ["src/components/MemberPage/*"],
+      "@Modals/*": ["src/components/Modals/*"]
     }
   },
   "include": ["src/**/*", "custom.d.ts"],
