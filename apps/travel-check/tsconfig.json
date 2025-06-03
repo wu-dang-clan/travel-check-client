@@ -6,7 +6,8 @@
       "@components/*": ["src/shared/components/*"],
       "@CreatePage/*": ["src/components/CreatePage/*"],
       "@LinkPage/*": ["src/components/LinkPage/*"],
-      "@JoinPage/*": ["src/components/JoinPage/*"]
+      "@JoinPage/*": ["src/components/JoinPage/*"],
+      "@MainPage/*": ["src/components/MainPage/*"]
     }
   },
   "include": ["src/**/*", "custom.d.ts"],
