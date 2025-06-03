@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PixelBox, TitleBox, InputAddList, ButtonLg, ButtonMed } from "@travel-check-client/ui";
 
-export const Route = createFileRoute("/$epicId/delete")({
+export const Route = createFileRoute("/$epicLink/delete")({
   component: RouteComponent,
 });
 

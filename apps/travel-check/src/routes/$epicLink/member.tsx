@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ButtonLg, InputText, PixelBox, TitleBox } from "@travel-check-client/ui";
 import MemberList from "../../components/MemberList";
 
-export const Route = createFileRoute("/$epicId/member")({
+export const Route = createFileRoute("/$epicLink/member")({
   component: RouteComponent,
 });
 

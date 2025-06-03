@@ -5,7 +5,8 @@
     "paths": {
       "@components/*": ["src/shared/components/*"],
       "@CreatePage/*": ["src/components/CreatePage/*"],
-      "@LinkPage/*": ["src/components/LinkPage/*"]
+      "@LinkPage/*": ["src/components/LinkPage/*"],
+      "@JoinPage/*": ["src/components/JoinPage/*"]
     }
   },
   "include": ["src/**/*", "custom.d.ts"],

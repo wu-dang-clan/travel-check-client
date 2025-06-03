@@ -10,208 +10,208 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as LoadingImport } from './routes/loading'
-import { Route as LinkImport } from './routes/link'
-import { Route as CreateImport } from './routes/create'
-import { Route as IndexImport } from './routes/index'
-import { Route as EpicIdMemberImport } from './routes/$epicId/member'
-import { Route as EpicIdMainImport } from './routes/$epicId/main'
-import { Route as EpicIdJoinImport } from './routes/$epicId/join'
-import { Route as EpicIdDeleteImport } from './routes/$epicId/delete'
+import { Route as rootRoute } from "./routes/__root";
+import { Route as LoadingImport } from "./routes/loading";
+import { Route as LinkImport } from "./routes/link";
+import { Route as CreateImport } from "./routes/create";
+import { Route as IndexImport } from "./routes/index";
+import { Route as EpicLinkMemberImport } from "./routes/$epicLink/member";
+import { Route as EpicLinkMainImport } from "./routes/$epicLink/main";
+import { Route as EpicLinkJoinImport } from "./routes/$epicLink/join";
+import { Route as EpicLinkDeleteImport } from "./routes/$epicLink/delete";
 
 // Create/Update Routes
 
 const LoadingRoute = LoadingImport.update({
-  id: '/loading',
-  path: '/loading',
+  id: "/loading",
+  path: "/loading",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const LinkRoute = LinkImport.update({
-  id: '/link',
-  path: '/link',
+  id: "/link",
+  path: "/link",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const CreateRoute = CreateImport.update({
-  id: '/create',
-  path: '/create',
+  id: "/create",
+  path: "/create",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const IndexRoute = IndexImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
-const EpicIdMemberRoute = EpicIdMemberImport.update({
-  id: '/$epicId/member',
-  path: '/$epicId/member',
+const EpicLinkMemberRoute = EpicLinkMemberImport.update({
+  id: "/$epicLink/member",
+  path: "/$epicLink/member",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
-const EpicIdMainRoute = EpicIdMainImport.update({
-  id: '/$epicId/main',
-  path: '/$epicId/main',
+const EpicLinkMainRoute = EpicLinkMainImport.update({
+  id: "/$epicLink/main",
+  path: "/$epicLink/main",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
-const EpicIdJoinRoute = EpicIdJoinImport.update({
-  id: '/$epicId/join',
-  path: '/$epicId/join',
+const EpicLinkJoinRoute = EpicLinkJoinImport.update({
+  id: "/$epicLink/join",
+  path: "/$epicLink/join",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
-const EpicIdDeleteRoute = EpicIdDeleteImport.update({
-  id: '/$epicId/delete',
-  path: '/$epicId/delete',
+const EpicLinkDeleteRoute = EpicLinkDeleteImport.update({
+  id: "/$epicLink/delete",
+  path: "/$epicLink/delete",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/create': {
-      id: '/create'
-      path: '/create'
-      fullPath: '/create'
-      preLoaderRoute: typeof CreateImport
-      parentRoute: typeof rootRoute
-    }
-    '/link': {
-      id: '/link'
-      path: '/link'
-      fullPath: '/link'
-      preLoaderRoute: typeof LinkImport
-      parentRoute: typeof rootRoute
-    }
-    '/loading': {
-      id: '/loading'
-      path: '/loading'
-      fullPath: '/loading'
-      preLoaderRoute: typeof LoadingImport
-      parentRoute: typeof rootRoute
-    }
-    '/$epicId/delete': {
-      id: '/$epicId/delete'
-      path: '/$epicId/delete'
-      fullPath: '/$epicId/delete'
-      preLoaderRoute: typeof EpicIdDeleteImport
-      parentRoute: typeof rootRoute
-    }
-    '/$epicId/join': {
-      id: '/$epicId/join'
-      path: '/$epicId/join'
-      fullPath: '/$epicId/join'
-      preLoaderRoute: typeof EpicIdJoinImport
-      parentRoute: typeof rootRoute
-    }
-    '/$epicId/main': {
-      id: '/$epicId/main'
-      path: '/$epicId/main'
-      fullPath: '/$epicId/main'
-      preLoaderRoute: typeof EpicIdMainImport
-      parentRoute: typeof rootRoute
-    }
-    '/$epicId/member': {
-      id: '/$epicId/member'
-      path: '/$epicId/member'
-      fullPath: '/$epicId/member'
-      preLoaderRoute: typeof EpicIdMemberImport
-      parentRoute: typeof rootRoute
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/create": {
+      id: "/create";
+      path: "/create";
+      fullPath: "/create";
+      preLoaderRoute: typeof CreateImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/link": {
+      id: "/link";
+      path: "/link";
+      fullPath: "/link";
+      preLoaderRoute: typeof LinkImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/loading": {
+      id: "/loading";
+      path: "/loading";
+      fullPath: "/loading";
+      preLoaderRoute: typeof LoadingImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/$epicLink/delete": {
+      id: "/$epicLink/delete";
+      path: "/$epicLink/delete";
+      fullPath: "/$epicLink/delete";
+      preLoaderRoute: typeof EpicLinkDeleteImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/$epicLink/join": {
+      id: "/$epicLink/join";
+      path: "/$epicLink/join";
+      fullPath: "/$epicLink/join";
+      preLoaderRoute: typeof EpicLinkJoinImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/$epicLink/main": {
+      id: "/$epicLink/main";
+      path: "/$epicLink/main";
+      fullPath: "/$epicLink/main";
+      preLoaderRoute: typeof EpicLinkMainImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/$epicLink/member": {
+      id: "/$epicLink/member";
+      path: "/$epicLink/member";
+      fullPath: "/$epicLink/member";
+      preLoaderRoute: typeof EpicLinkMemberImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/create': typeof CreateRoute
-  '/link': typeof LinkRoute
-  '/loading': typeof LoadingRoute
-  '/$epicId/delete': typeof EpicIdDeleteRoute
-  '/$epicId/join': typeof EpicIdJoinRoute
-  '/$epicId/main': typeof EpicIdMainRoute
-  '/$epicId/member': typeof EpicIdMemberRoute
+  "/": typeof IndexRoute;
+  "/create": typeof CreateRoute;
+  "/link": typeof LinkRoute;
+  "/loading": typeof LoadingRoute;
+  "/$epicLink/delete": typeof EpicLinkDeleteRoute;
+  "/$epicLink/join": typeof EpicLinkJoinRoute;
+  "/$epicLink/main": typeof EpicLinkMainRoute;
+  "/$epicLink/member": typeof EpicLinkMemberRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/create': typeof CreateRoute
-  '/link': typeof LinkRoute
-  '/loading': typeof LoadingRoute
-  '/$epicId/delete': typeof EpicIdDeleteRoute
-  '/$epicId/join': typeof EpicIdJoinRoute
-  '/$epicId/main': typeof EpicIdMainRoute
-  '/$epicId/member': typeof EpicIdMemberRoute
+  "/": typeof IndexRoute;
+  "/create": typeof CreateRoute;
+  "/link": typeof LinkRoute;
+  "/loading": typeof LoadingRoute;
+  "/$epicLink/delete": typeof EpicLinkDeleteRoute;
+  "/$epicLink/join": typeof EpicLinkJoinRoute;
+  "/$epicLink/main": typeof EpicLinkMainRoute;
+  "/$epicLink/member": typeof EpicLinkMemberRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/create': typeof CreateRoute
-  '/link': typeof LinkRoute
-  '/loading': typeof LoadingRoute
-  '/$epicId/delete': typeof EpicIdDeleteRoute
-  '/$epicId/join': typeof EpicIdJoinRoute
-  '/$epicId/main': typeof EpicIdMainRoute
-  '/$epicId/member': typeof EpicIdMemberRoute
+  __root__: typeof rootRoute;
+  "/": typeof IndexRoute;
+  "/create": typeof CreateRoute;
+  "/link": typeof LinkRoute;
+  "/loading": typeof LoadingRoute;
+  "/$epicLink/delete": typeof EpicLinkDeleteRoute;
+  "/$epicLink/join": typeof EpicLinkJoinRoute;
+  "/$epicLink/main": typeof EpicLinkMainRoute;
+  "/$epicLink/member": typeof EpicLinkMemberRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
-    | '/'
-    | '/create'
-    | '/link'
-    | '/loading'
-    | '/$epicId/delete'
-    | '/$epicId/join'
-    | '/$epicId/main'
-    | '/$epicId/member'
-  fileRoutesByTo: FileRoutesByTo
+    | "/"
+    | "/create"
+    | "/link"
+    | "/loading"
+    | "/$epicLink/delete"
+    | "/$epicLink/join"
+    | "/$epicLink/main"
+    | "/$epicLink/member";
+  fileRoutesByTo: FileRoutesByTo;
   to:
-    | '/'
-    | '/create'
-    | '/link'
-    | '/loading'
-    | '/$epicId/delete'
-    | '/$epicId/join'
-    | '/$epicId/main'
-    | '/$epicId/member'
+    | "/"
+    | "/create"
+    | "/link"
+    | "/loading"
+    | "/$epicLink/delete"
+    | "/$epicLink/join"
+    | "/$epicLink/main"
+    | "/$epicLink/member";
   id:
-    | '__root__'
-    | '/'
-    | '/create'
-    | '/link'
-    | '/loading'
-    | '/$epicId/delete'
-    | '/$epicId/join'
-    | '/$epicId/main'
-    | '/$epicId/member'
-  fileRoutesById: FileRoutesById
+    | "__root__"
+    | "/"
+    | "/create"
+    | "/link"
+    | "/loading"
+    | "/$epicLink/delete"
+    | "/$epicLink/join"
+    | "/$epicLink/main"
+    | "/$epicLink/member";
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  CreateRoute: typeof CreateRoute
-  LinkRoute: typeof LinkRoute
-  LoadingRoute: typeof LoadingRoute
-  EpicIdDeleteRoute: typeof EpicIdDeleteRoute
-  EpicIdJoinRoute: typeof EpicIdJoinRoute
-  EpicIdMainRoute: typeof EpicIdMainRoute
-  EpicIdMemberRoute: typeof EpicIdMemberRoute
+  IndexRoute: typeof IndexRoute;
+  CreateRoute: typeof CreateRoute;
+  LinkRoute: typeof LinkRoute;
+  LoadingRoute: typeof LoadingRoute;
+  EpicLinkDeleteRoute: typeof EpicLinkDeleteRoute;
+  EpicLinkJoinRoute: typeof EpicLinkJoinRoute;
+  EpicLinkMainRoute: typeof EpicLinkMainRoute;
+  EpicLinkMemberRoute: typeof EpicLinkMemberRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -219,15 +219,15 @@ const rootRouteChildren: RootRouteChildren = {
   CreateRoute: CreateRoute,
   LinkRoute: LinkRoute,
   LoadingRoute: LoadingRoute,
-  EpicIdDeleteRoute: EpicIdDeleteRoute,
-  EpicIdJoinRoute: EpicIdJoinRoute,
-  EpicIdMainRoute: EpicIdMainRoute,
-  EpicIdMemberRoute: EpicIdMemberRoute,
-}
+  EpicLinkDeleteRoute: EpicLinkDeleteRoute,
+  EpicLinkJoinRoute: EpicLinkJoinRoute,
+  EpicLinkMainRoute: EpicLinkMainRoute,
+  EpicLinkMemberRoute: EpicLinkMemberRoute,
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
@@ -239,10 +239,10 @@ export const routeTree = rootRoute
         "/create",
         "/link",
         "/loading",
-        "/$epicId/delete",
-        "/$epicId/join",
-        "/$epicId/main",
-        "/$epicId/member"
+        "/$epicLink/delete",
+        "/$epicLink/join",
+        "/$epicLink/main",
+        "/$epicLink/member"
       ]
     },
     "/": {
@@ -257,17 +257,17 @@ export const routeTree = rootRoute
     "/loading": {
       "filePath": "loading.tsx"
     },
-    "/$epicId/delete": {
-      "filePath": "$epicId/delete.tsx"
+    "/$epicLink/delete": {
+      "filePath": "$epicLink/delete.tsx"
     },
-    "/$epicId/join": {
-      "filePath": "$epicId/join.tsx"
+    "/$epicLink/join": {
+      "filePath": "$epicLink/join.tsx"
     },
-    "/$epicId/main": {
-      "filePath": "$epicId/main.tsx"
+    "/$epicLink/main": {
+      "filePath": "$epicLink/main.tsx"
     },
-    "/$epicId/member": {
-      "filePath": "$epicId/member.tsx"
+    "/$epicLink/member": {
+      "filePath": "$epicLink/member.tsx"
     }
   }
 }
