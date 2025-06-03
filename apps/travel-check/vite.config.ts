@@ -8,6 +8,16 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ui": path.resolve(__dirname, "../../packages/ui"),
+      "@shared/components": path.resolve(__dirname, "./src/shared/components"),
+
+      //page별 components
+      "@CreatePage": path.resolve(__dirname, "./src/components/CreatePage"),
+      "@DeletePage": path.resolve(__dirname, "./src/components/DeletePage"),
+      "@JoinPage": path.resolve(__dirname, "./src/components/JoinPage"),
+      "@LinkPage": path.resolve(__dirname, "./src/components/LinkPage"),
+      "@LoadingPage": path.resolve(__dirname, "./src/components/LoadingPage"),
+      "@MainPage": path.resolve(__dirname, "./src/components/MainPage"),
+      "@MemberPage": path.resolve(__dirname, "./src/components/MemberPage"),
     },
   },
   server: {

@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PixelBox, TitleBox, InputAddList, ButtonLg } from "@travel-check-client/ui";
+import { PixelBox, TitleBox, ButtonLg } from "@travel-check-client/ui";
 import PersonalList from "../../components/PersonalList";
 import TeamList from "../../components/TeamList";
 import { useState } from "react";
-import ModalEdit from "../../components/modals/ModalEdit";
+import ModalEdit from "../../components/Modals/ModalEdit";
 import { mockTravelData } from "../../mocks/mock";
 
 export const Route = createFileRoute("/$epicId/main")({

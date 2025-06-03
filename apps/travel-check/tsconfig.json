@@ -1,4 +1,6 @@
 {
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "extends": "@travel-check-client/typescript-config/react-library.json",
+  "compilerOptions": {},
+  "include": ["src/**/*", "custom.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

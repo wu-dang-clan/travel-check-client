@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import Background from "../components/Background";
+import Background from "@shared/components/Background.jsx";
 
 export const Route = createRootRoute({
   component: RootComponent,
