@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@ui": path.resolve(__dirname, "../../packages/ui"),
-      "@shared/components": path.resolve(__dirname, "./src/shared/components"),
+      "@components": path.resolve(__dirname, "./src/shared/components"),
 
       //page별 components
       "@CreatePage": path.resolve(__dirname, "./src/components/CreatePage"),

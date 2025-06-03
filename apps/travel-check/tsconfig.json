@@ -1,6 +1,12 @@
 {
   "extends": "@travel-check-client/typescript-config/react-library.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/shared/components/*"],
+      "@CreatePage/*": ["src/components/CreatePage/*"]
+    }
+  },
   "include": ["src/**/*", "custom.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
