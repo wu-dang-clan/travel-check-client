@@ -9,7 +9,8 @@
       "@JoinPage/*": ["src/components/JoinPage/*"],
       "@MainPage/*": ["src/components/MainPage/*"],
       "@MemberPage/*": ["src/components/MemberPage/*"],
-      "@Modals/*": ["src/components/Modals/*"]
+      "@Modals/*": ["src/components/Modals/*"],
+      "@assets/*": ["src/shared/assets/*"]
     }
   },
   "include": ["src/**/*", "custom.d.ts"],

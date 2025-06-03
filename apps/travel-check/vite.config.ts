@@ -19,6 +19,9 @@ export default defineConfig({
       "@MainPage": path.resolve(__dirname, "./src/components/MainPage"),
       "@MemberPage": path.resolve(__dirname, "./src/components/MemberPage"),
       "@Modals": path.resolve(__dirname, "./src/components/Modals"),
+
+      //shared assets
+      "@assets": path.resolve(__dirname, "./src/shared/assets"),
     },
   },
   server: {

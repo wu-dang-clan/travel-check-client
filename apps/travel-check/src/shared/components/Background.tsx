@@ -1,5 +1,5 @@
-import Cloud from "../assets/svgs/Cloud.svg";
-import Land from "../assets/svgs/Land.svg";
+import Cloud from "@assets/svgs/Cloud.svg";
+import Land from "@assets/svgs/Land.svg";
 
 export default function Background() {
   return (
